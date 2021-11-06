@@ -5,13 +5,13 @@ titulo.textContent = "Nutrição Desaparecida"
 
 var paciente2 = ( document.querySelector("#paciente_2"));
 
-var tdPeso = paciente2.querySelector(".info-peso");
+var tdPeso = paciente2.querySelector(".info_peso");
 var peso = tdPeso.textContent;
 
-var tdAltura = paciente2.querySelector(".info-altura")
+var tdAltura = paciente2.querySelector(".info_altura")
 var altura = tdAltura.textContent;
 
-var tdImc = paciente2.querySelector (".info-imc");
+var tdImc = paciente2.querySelector (".info_imc");
 
 
 var imc =   peso / (altura ** 2);
@@ -38,7 +38,7 @@ function calculaImc(id,classPeso, classAltura,ClassImc) {
     
     tdImc.textContent = imc
 }
-calculaImc(paciente_1,info_peso,info_altura,info_imc);
+calculaImc(paciente_1,info-peso,info-altura,info-imc);
 
 
 console.log(imc)
