@@ -19,10 +19,12 @@ function calculaImc(id,classPeso, classAltura,classImc) {
     if(peso <= 0 || peso >= 1000){
         tdImc.textContent = "Peso inválido";
         pesoValido = false;
+        paciente.style.backgroundColor = 'lightcoral'
     }
     if(altura <= 0 || altura > 3.0){
         tdImc.textContent = "Altura inválido";
         alturaValida = false
+        paciente.style.backgroundColor = 'lightcoral'
     }
     
 
