@@ -17,11 +17,11 @@ function calculaImc(id,classPeso, classAltura,classImc) {
     var tdImc = paciente.querySelector(classImc);
 
     if(peso<0 || peso >100){
-        tdImc.textContent = "Inválido";
+        tdImc.textContent = "Peso inválido";
         pesoValido = false;
     }
     if(altura<0 || altura > 3.0){
-        tdImc.textContent = "Inválido";
+        tdImc.textContent = "Altura inválido";
         alturaValida = false
     }
     
