@@ -46,7 +46,7 @@ function calculaImc(id,classPeso, classAltura,classImc) {
 var pacientes = document.querySelectorAll('.paciente');
 
 console.log(pacientes)
-for( i = 1; i <= pacientes.length; i++){
+for( i = 1; i < pacientes.length; i++){
 
     calculaImc(`#paciente_${i}`,'.info_peso','.info_altura','.info_imc');
 
