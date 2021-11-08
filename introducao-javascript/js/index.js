@@ -30,9 +30,7 @@ function calculaImc(id,classPeso, classAltura,classImc) {
 
         var imc =   peso / (altura ** 2);
         
-        var imc = imc.toFixed(2)
-        
-        tdImc.textContent = imc;
+        tdImc.textContent = imc.toFixed(2);
     }
     
 }
