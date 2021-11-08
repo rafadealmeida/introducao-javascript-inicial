@@ -1,6 +1,6 @@
 var titulo = document.querySelector(".titulo");
 			
-titulo.textContent = "Nutrição Desaparecida"
+titulo.textContent = "Nutrição Aparecida"
 
 
 function calculaImc(id,classPeso, classAltura,classImc) {
@@ -36,9 +36,10 @@ function calculaImc(id,classPeso, classAltura,classImc) {
     }
     
 }
+var pacientes = document.querySelectorAll('.paciente');
 
-var totalPacientes = 5
-for( i = 1; i <= totalPacientes; i++){
+console.log(pacientes)
+for( i = 1; i <= pacientes.length; i++){
 
     calculaImc(`#paciente_${i}`,'.info_peso','.info_altura','.info_imc');
 
