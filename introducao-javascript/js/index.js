@@ -7,8 +7,6 @@ function calculaImc(id,classPeso, classAltura,classImc) {
     
     var pesoValido = true;
     var alturaValida = true;
-    
-    var corError = "lightcoral"
 
     var paciente =(document.querySelector(id));
 
@@ -20,19 +18,20 @@ function calculaImc(id,classPeso, classAltura,classImc) {
 
     if(i%2==0){
 
+        paciente.classList.add("linhaPar")
         
-        paciente.style.backgroundColor = 'lightgrey'
     }
 
     if(peso <= 0 || peso >= 1000){
         tdImc.textContent = "Peso inválido";
         pesoValido = false;
-        paciente.style.backgroundColor = corError
+        paciente.classList.add("calculoInvalido");
     }
     if(altura <= 0 || altura > 3.0){
         tdImc.textContent = "Altura inválido";
         alturaValida = false
-        paciente.style.backgroundColor = corError
+        paciente.classList.add("calculoInvalido");
+        
     }
     
 
