@@ -58,6 +58,7 @@ botao.addEventListener("click", function(evento){
         tabela.appendChild(pacienteAdd);
 
 
-
+formulario.reset();
+formulario.nome.focus()
 })
 
