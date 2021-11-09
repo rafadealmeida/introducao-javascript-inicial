@@ -1,16 +1,16 @@
+function obterDados(formulario) {
+    var paciente = {
+        nome:formulario.nome.value,
+        altura:formulario.altura.value,
+        peso:formulario.peso.value,
+        gordura:formulario.gordura.value,
+        imc: calculaImcInput(formulario.peso.value, formulario.altura.value)
 
-var botao = document.querySelector("#adicionar-paciente");
+    }
+    return paciente;
+}
 
-botao.addEventListener("click", function(evento){
-    evento.preventDefault();
-
-    var formulario = document.querySelector("#form-adiciona");
-
-    var nome = formulario.nome.value;        
-    var altura = formulario.altura.value;        
-    var peso = formulario.peso.value;        
-    var gordura = formulario.gordura.value;        
-     
+function criaTr(paciente) {
     var pacienteAdd = document.createElement("tr");
     
     var nomeAdd = document.createElement("td");
@@ -19,17 +19,32 @@ botao.addEventListener("click", function(evento){
     var gorduraAdd = document.createElement("td");
     var imcAdd = document.createElement("td");
 
-    nomeAdd.textContent = nome;     
-    pesoAdd.textContent = peso;
-    alturaAdd.textContent = altura;
-    gorduraAdd.textContent = gordura;
-    imcAdd.textContent = calculaImcInput(peso,altura) 
+    nomeAdd.textContent = paciente.nome;     
+    pesoAdd.textContent = paciente.peso;
+    alturaAdd.textContent = paciente.altura;
+    gorduraAdd.textContent =paciente.gordura;
+    imcAdd.textContent = calculaImcInput(paciente.peso,paciente.altura) 
 
     pacienteAdd.appendChild(nomeAdd)
     pacienteAdd.appendChild(pesoAdd)
     pacienteAdd.appendChild(alturaAdd)
     pacienteAdd.appendChild(gorduraAdd)
     pacienteAdd.appendChild(imcAdd)
+
+    return pacienteAdd;
+}
+
+var botao = document.querySelector("#adicionar-paciente");
+
+botao.addEventListener("click", function(evento){
+    evento.preventDefault();
+
+    var formulario = document.querySelector("#form-adiciona");
+
+   var paciente = obterDados(formulario);
+
+   var pacienteAdd = criaTr(paciente);
+   
     
     var tabela = document.querySelector("#tabela-pacientes");
 
