@@ -5,54 +5,32 @@ function obterDados(formulario) {
         peso:formulario.peso.value,
         gordura:formulario.gordura.value,
         imc: calculaImcInput(formulario.peso.value, formulario.altura.value)
-
+        
     }
     return paciente;
 }
 
 function criaTr(paciente) {
     var pacienteAdd = document.createElement("tr");
+    pacienteAdd.classList.add("paciente");
     
-    var nomeAdd = document.createElement("td");
-    var pesoAdd = document.createElement("td");
-    var alturaAdd = document.createElement("td");
-    var gorduraAdd = document.createElement("td");
-    var imcAdd = document.createElement("td");
-
-    nomeAdd.textContent = paciente.nome;     
-    pesoAdd.textContent = paciente.peso;
-    alturaAdd.textContent = paciente.altura;
-    gorduraAdd.textContent =paciente.gordura;
-    imcAdd.textContent = calculaImcInput(paciente.peso,paciente.altura) 
-
-    pacienteAdd.appendChild(nomeAdd)
-    pacienteAdd.appendChild(pesoAdd)
-    pacienteAdd.appendChild(alturaAdd)
-    pacienteAdd.appendChild(gorduraAdd)
-    pacienteAdd.appendChild(imcAdd)
-
+    pacienteAdd.appendChild(criaTd(paciente.nome,"info_nome"))
+    pacienteAdd.appendChild(criaTd(paciente.peso,"info_peso"))
+    pacienteAdd.appendChild(criaTd(paciente.altura,"info_altura"))
+    pacienteAdd.appendChild(criaTd(paciente.gordura,"info_gordura"))
+    pacienteAdd.appendChild(criaTd(paciente.imc,"info_imc")
+    )
+    
     return pacienteAdd;
 }
 
-var botao = document.querySelector("#adicionar-paciente");
+function criaTd(dado,classe) {
+    var td = document.createElement("td");
+    td.textContent = dado;
+    td.classList.add(classe);
 
-botao.addEventListener("click", function(evento){
-    evento.preventDefault();
-
-    var formulario = document.querySelector("#form-adiciona");
-
-   var paciente = obterDados(formulario);
-
-   var pacienteAdd = criaTr(paciente);
-   
-    
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteAdd);
-
-
-
-})
+    return td;
+}
 
 function calculaImcInput(peso, altura) {
     var imc =  0;
@@ -61,3 +39,25 @@ function calculaImcInput(peso, altura) {
 
     return imc.toFixed(2);
 }
+
+var botao = document.querySelector("#adicionar-paciente");
+
+botao.addEventListener("click", function(evento){
+    
+    evento.preventDefault();
+    
+    var formulario = document.querySelector("#form-adiciona");
+    
+    var paciente = obterDados(formulario);
+    
+    var pacienteAdd = criaTr(paciente);
+    
+    
+    var tabela = document.querySelector("#tabela-pacientes");
+
+        tabela.appendChild(pacienteAdd);
+
+
+
+})
+
