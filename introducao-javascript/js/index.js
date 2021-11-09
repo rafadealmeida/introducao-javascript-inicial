@@ -60,3 +60,9 @@ titulo.addEventListener('click', mostraMensagem);
 function mostraMensagem() {
     console.log( "Olá , fui clicado!")
 }
+
+var botaoAdicionar = document.querySelector ('#adicionar-paciente');
+
+botaoAdicionar.addEventListener('click', function(){
+    alert('Você clicou!')
+})
