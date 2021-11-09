@@ -77,13 +77,15 @@ label{
 }
 
 .campo{
+	display: block;
 	margin: 0;
 	padding-bottom: 1em;
 	width: 100%;
 	border: 1px solid #ccc;
 	padding: .7em;
-	width: 100%;
+	
 }
+
 
 .campo-medio{
 	display: inline-block;
@@ -125,8 +127,10 @@ button[disabled=disabled], button:disabled {
 
 }
 
-.adicionar-paciente{
+#adicionar-paciente{
     margin-top: 30px;
+	min-width: 300px;
+	max-width: 600px;
 }
 
 .campo-invalido{
