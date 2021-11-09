@@ -23,11 +23,13 @@ botao.addEventListener("click", function(evento){
     pesoAdd.textContent = peso;
     alturaAdd.textContent = altura;
     gorduraAdd.textContent = gordura;
+    imcAdd.textContent = calculaImcInput(peso,altura) 
 
     pacienteAdd.appendChild(nomeAdd)
     pacienteAdd.appendChild(pesoAdd)
     pacienteAdd.appendChild(alturaAdd)
     pacienteAdd.appendChild(gorduraAdd)
+    pacienteAdd.appendChild(imcAdd)
     
     var tabela = document.querySelector("#tabela-pacientes");
 
@@ -36,3 +38,11 @@ botao.addEventListener("click", function(evento){
 
 
 })
+
+function calculaImcInput(peso, altura) {
+    var imc =  0;
+
+    imc = peso /( altura**2);
+
+    return imc.toFixed(2);
+}
