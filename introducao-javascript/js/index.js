@@ -52,49 +52,40 @@ for( i = 1; i <= pacientes.length; i++){
 
 }
 
-function acoesMouse(evento) {
-    
-}
-titulo.addEventListener('click', mostraMensagem);
+var botao = document.querySelector("#adicionar-paciente");
 
-function mostraMensagem() {
-    console.log( "Olá , fui clicado!")
-}
-
-var botaoAdicionar = document.querySelector ('#adicionar-paciente');
-
-botaoAdicionar.addEventListener('click', function(evento){
+botao.addEventListener("click", function(evento){
     evento.preventDefault();
+
+    var formulario = document.querySelector("#form-adiciona");
+
+    var nome = formulario.nome.value;        
+    var altura = formulario.altura.value;        
+    var peso = formulario.peso.value;        
+    var gordura = formulario.gordura.value;        
+     
+    var pacienteAdd = document.createElement("tr");
     
-    var form = document.querySelector("#form-adiciona");
+    var nomeAdd = document.createElement("td");
+    var pesoAdd = document.createElement("td");
+    var alturaAdd = document.createElement("td");
+    var gorduraAdd = document.createElement("td");
+    var imcAdd = document.createElement("td");
 
-    var nome = form.nome.value;
-    var peso = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura.value;
+    nomeAdd.textContent = nome;     
+    pesoAdd.textContent = peso;
+    alturaAdd.textContent = altura;
+    gorduraAdd.textContent = gordura;
+
+    pacienteAdd.appendChild(nomeAdd)
+    pacienteAdd.appendChild(pesoAdd)
+    pacienteAdd.appendChild(alturaAdd)
+    pacienteAdd.appendChild(gorduraAdd)
     
+    var tabela = document.querySelector("#tabela-pacientes");
 
-    var pacienteTr= document.createElement("tr")
+    tabela.appendChild(pacienteAdd);
 
-    var nomeTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var gorduraTd = document.createElement("td");
-    var imcTd = document.createElement("td");
-
-    nomeTd.textContent = nome;
-    pesoTd.textContent = peso;
-    alturaTd.textContent = altura;
-    gorduraTd.textContent = gordura;
-
-    pacienteTr.appendChild(nomeTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(gorduraTd);
-    
-    var tabela = document.querySelector ("#tabela-pacientes");
-
-    tabela.appendChild(pacienteTr);
 
 
 })
