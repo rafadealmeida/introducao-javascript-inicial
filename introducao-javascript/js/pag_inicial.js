@@ -16,7 +16,7 @@ function verificaDados(peso, altura) {
     return alturaValido,pesoValido;
 }
 
-function calculaImc(peso, altura) {
+function imc(peso, altura) {
    var imc = 0;
    
    verificaDados(peso, altura);
@@ -31,29 +31,26 @@ function calculaImc(peso, altura) {
 }
 var pesoValido = true;
 var alturaValido = true;
-var paciente = document.querySelector(".paciente");
 
 function recebeDados(paciente){
-    paciente = {
-
-        peso : paciente.querySelector(".info_peso").textContent,
-        altura : paciente.querySelector('.info_altura').textContent,
-        gordura : paciente.querySelector('.info_gordura').textContent,
-        imc : paciente.querySelector('.info_imc')
-    }
+    var paciente,[i] = document.querySelector(".paciente");
+    var peso = paciente.querySelector(".info_peso").textContent;
+    var altura = paciente.querySelector('.info_altura').textContent;
+    var gordura = paciente.querySelector('.info_gordura').textContent;
+    var imc = paciente.querySelector('.info_imc');
 
     return paciente;
 }
 
 var pacientes = document.querySelectorAll(".paciente");
-console.log(paciente)
+console.log(pacientes)
 
-var imcTd = calculaImc()
+var imcTd= imc
 
 for (let i = 0; i < pacientes.length; i++) {
     const paciente = pacientes[i];
     recebeDados(paciente)
-    imcTd.textContent = calculaImc(paciente ,peso, altura);
+    imcTd.textContent = imc(paciente ,peso, altura);
     
 }
 
