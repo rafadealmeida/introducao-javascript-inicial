@@ -3,18 +3,18 @@ var titulo = document.querySelector(".titulo");
 titulo.textContent = "Nutrição Aparecida"
 
 
-function calculaImc(id,classPeso, classAltura,classImc) {
+function calculaImc(id) {
     
     var pesoValido = true;
     var alturaValida = true;
 
     var paciente =(document.querySelector(id));
 
-    var peso = paciente.querySelector(classPeso).textContent;
+    var peso = paciente.querySelector(".info_peso").textContent;
     
-    var altura = paciente.querySelector(classAltura).textContent;
+    var altura = paciente.querySelector(".info_altura").textContent;
     
-    var tdImc = paciente.querySelector(classImc);
+    var tdImc = paciente.querySelector(".info_imc");
 
    /* if(i%2==0){
 
@@ -48,7 +48,7 @@ var pacientes = document.querySelectorAll('.paciente');
 
 for( i = 1; i <= pacientes.length; i++){
 
-    calculaImc(`#paciente_${i}`,'.info_peso','.info_altura','.info_imc');
+    calculaImc(`#paciente_${i}`);
 
 }
  
