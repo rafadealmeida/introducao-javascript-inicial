@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="convidado">
+            Nome <span class="nome">Douglas</span>,
+            idade <span class="idade">23</span>
+        </li>
+        <li class="convidado">
+            Nome <span class="nome">Daniel</span>,
+            idade <span class="idade">42</span>
+        </li>    
+        <li class="convidado">
+            Nome <span class="nome">Marcos</span>,
+            idade <span class="idade">27</span>
+        </li>    
+        <li class="convidado">
+            Nome <span class="nome">Flávio</span>,
+            idade <span class="idade">18</span>
+        </li>
+        <br>
+        Total das idades: <span class="total"></span>
+    </ul>
+
+    <script class="">
+        
+        function criaListaConvidados () {
+
+            var itens = document.querySelectorAll(".convidado");
+    
+            var convidados = [];
+
+            for (let i = 0; i < itens.length; i++) {
+                var convidado = {
+                    nome: itens[i].querySelector(".nome").textContent,
+                    idade: itens[i].querySelector(".idade").textContent
+                }
+                convidados.push(convidado);
+            }
+            return convidados;
+        }
+        
+        function calculaTotalIdades(convidados) {
+            var total = 0;
+            for (var i = 0; i < itens.length; i++) {
+                total += convidados[i].idade;
+        }
+            return total;
+        }
+
+        function exibeMensagem(total) {
+            
+            document.querySelector(".total").textContent = total;
+        }
+
+
+        var convidados = criaListaConvidados();
+
+        var totalDasIdade = calculaTotalIdades(convidados);
+
+        exibeMensagem(totalDasIdade);
+    </script>
+</body>
+</html>
