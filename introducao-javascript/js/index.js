@@ -1,27 +1,25 @@
 var titulo = document.querySelector(".titulo");
-			
+
 titulo.textContent = "Nutrição Aparecida"
 
+var pacientes = document.querySelectorAll('.paciente');
 
-function calculaImc(id) {
+for( i = 1; i <= pacientes.length; i++){
+
+    var paciente = acientes[i]
     
     var pesoValido = true;
     var alturaValida = true;
-
-    var paciente =(document.querySelector(id));
-
+    
+    
     var peso = paciente.querySelector(".info_peso").textContent;
     
     var altura = paciente.querySelector(".info_altura").textContent;
     
-    var tdImc = paciente.querySelector(".info_imc");
+    var tdImc = calculaImc(peso, altura);
+    
 
-   /* if(i%2==0){
-
-        paciente.classList.add("linhaPar")
-        
-    }*/
-
+    
     if(peso <= 0 || peso >= 1000){
         tdImc.textContent = "Peso inválido";
         pesoValido = false;
@@ -34,21 +32,22 @@ function calculaImc(id) {
         
     }
     
-
     if(pesoValido && alturaValida){
-
-        var imc =   peso / (altura ** 2);
         
-        tdImc.textContent = imc.toFixed(2);
+       var imc = calculaImc(peso, altura)
+        
+        tdImc.textContent = imc;
     }
-    
+    return paciente;
 }
-var pacientes = document.querySelectorAll('.paciente');
 
 
-for( i = 1; i <= pacientes.length; i++){
+function calculaImc(peso, altura) {
 
-    calculaImc(`#paciente_${i}`);
+    var imc = 0;
+    imc = peso / (altura ** 2);
+
+    return imc.toFixed(2);
 
 }
- 
+
