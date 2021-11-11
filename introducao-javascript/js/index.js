@@ -12,7 +12,7 @@ for( i = 0; i < pacientes.length; i++){
     
     var altura = paciente.querySelector(".info_altura").textContent;
     
-    var tdImc = calculaImc(peso, altura);
+    var tdImc = paciente.querySelector(".info_imc")
     
     var pesoValido = true;
     var alturaValida = true;
@@ -31,7 +31,7 @@ for( i = 0; i < pacientes.length; i++){
     }
     
     if(pesoValido && alturaValida){
-       var imc = 0;
+        var imc = 0;
        var imc = calculaImc(peso, altura);
         
         tdImc.textContent = imc;
