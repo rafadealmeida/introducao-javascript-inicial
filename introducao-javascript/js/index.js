@@ -4,7 +4,7 @@ titulo.textContent = "Nutrição Aparecida"
 
 var pacientes = document.querySelectorAll(".paciente");
 
-for( i = 1; i <= pacientes.length; i++){
+for( i = 0; i < pacientes.length; i++){
    
     var paciente = pacientes[i];
     
