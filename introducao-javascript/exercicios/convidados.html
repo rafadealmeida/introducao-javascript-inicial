@@ -28,10 +28,10 @@
         Total das idades: <span class="total"></span>
     </ul>
 
-    <script class="">
+    <script >
         
         function criaListaConvidados () {
-
+            
             var itens = document.querySelectorAll(".convidado");
     
             var convidados = [];
@@ -39,7 +39,7 @@
             for (let i = 0; i < itens.length; i++) {
                 var convidado = {
                     nome: itens[i].querySelector(".nome").textContent,
-                    idade: itens[i].querySelector(".idade").textContent
+                    idade: Number(itens[i].querySelector(".idade").textContent)
                 }
                 convidados.push(convidado);
             }
@@ -48,7 +48,7 @@
         
         function calculaTotalIdades(convidados) {
             var total = 0;
-            for (var i = 0; i < itens.length; i++) {
+            for (let i = 0; i < convidados.length; i++) {
                 total += convidados[i].idade;
         }
             return total;
