@@ -40,3 +40,22 @@ function criarPacienteColuna(dado, classe) {
 
     return coluna;
 }
+
+var botao = document.querySelector("#adicionar-paciente");
+
+botao.addEventListener("click",function(evento){
+    evento.preventDefault();
+
+    var formulario = document.querySelector("#form-adiciona");
+
+    var paciente = captarDados(formulario);
+
+    var pacienteNovo = criarPacienteTabela(paciente);
+
+    var tabela = document.querySelector("#tabela-pacientes");
+
+    tabela.appendChild(pacienteNovo);
+
+    formulario.reset();
+    formulario.nome.focus();
+})
