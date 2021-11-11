@@ -6,7 +6,7 @@ var pacientes = document.querySelectorAll('.paciente');
 
 for( i = 1; i <= pacientes.length; i++){
 
-    var paciente = acientes[i]
+    var paciente = pacientes[i];
     
     var pesoValido = true;
     var alturaValida = true;
@@ -38,7 +38,7 @@ for( i = 1; i <= pacientes.length; i++){
         
         tdImc.textContent = imc;
     }
-    return paciente;
+    
 }
 
 
