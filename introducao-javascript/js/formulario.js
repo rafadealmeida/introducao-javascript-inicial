@@ -18,8 +18,7 @@ function criaTr(paciente) {
     pacienteAdd.appendChild(criaTd(paciente.peso,"info_peso"))
     pacienteAdd.appendChild(criaTd(paciente.altura,"info_altura"))
     pacienteAdd.appendChild(criaTd(paciente.gordura,"info_gordura"))
-    pacienteAdd.appendChild(criaTd(paciente.imc,"info_imc")
-    )
+    pacienteAdd.appendChild(criaTd(paciente.imc,"info_imc"))
     
     return pacienteAdd;
 }
