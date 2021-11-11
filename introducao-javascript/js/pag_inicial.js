@@ -23,10 +23,10 @@ function imc(peso, altura) {
    
     if (peso && altura){
         imc = peso/( altura ** 2);
-        imcTd.textContent = imc.toFixed(2);
+        
     }
    
-   return imcTd;
+   return imc.toFixed(2);
 
 }
 var pesoValido = true;
@@ -40,11 +40,11 @@ var gordura = paciente.querySelector('.info_gordura').textContent;
 var imcTd = paciente.querySelector('.info_imc');
 
 var pacientes = document.querySelectorAll(".paciente");
+console.log(pacientes)
 
 for (let i = 0; i < pacientes.length; i++) {
-    const element = pacientes[i];
-    calculaImc(peso, altura);
+    const pacient = pacientes[i];
+    imcTd.textContent = imc(peso, altura);
 }
-
 
 
