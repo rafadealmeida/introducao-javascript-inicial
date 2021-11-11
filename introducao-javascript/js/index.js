@@ -10,7 +10,7 @@ function calculaImc(id,classPeso, classAltura,classImc) {
 
     var paciente =(document.querySelector(id));
 
-    var peso = paciente.querySelector(classPeso).textContent;;
+    var peso = paciente.querySelector(classPeso).textContent;
     
     var altura = paciente.querySelector(classAltura).textContent;
     
