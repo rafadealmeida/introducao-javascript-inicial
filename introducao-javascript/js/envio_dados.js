@@ -18,22 +18,25 @@ function calculaImcInput(peso,altura) {
 }
 
 function criarPacienteTabela(paciente) {
-    var pacienteNovo = createElement.querySelector("tr");
+    var pacienteNovo = document.createElement("tr");
     pacienteNovo.classList.add("paciente");
+    
 
-    pacienteNovo.appendChild(criarPaciente(paciente.nome, "info_nome"));
-    pacienteNovo.appendChild(criarPacienteTabela(paciente.peso, "info_peso"));
-    pacienteNovo.appendChild(criarPaciente(paciente.altura,"info_altura"));
-    pacienteNovo.appendChild(criarPaciente(paciente.gordura, "info_gordura"));
-    pacienteNovo.appendChild(criarPaciente(paciente.imc, "info_imc"));
+    pacienteNovo.appendChild(criarPacienteColuna(paciente.nome, "info_nome"));
+    pacienteNovo.appendChild(criarPacienteColuna(paciente.peso, "info_peso"));
+    pacienteNovo.appendChild(criarPacienteColuna(paciente.altura,"info_altura"));
+    pacienteNovo.appendChild(criarPacienteColuna(paciente.gordura, "info_gordura"));
+    pacienteNovo.appendChild(criarPacienteColuna(paciente.imc, "info_imc"));
 
     return pacienteNovo;
 }
 
 function criarPacienteColuna(dado, classe) {
-    var coluna = document.querySelector("td");
+    var coluna = document.createElement("td");
     
     coluna.textContent = dado;
 
     coluna.classList.add(classe);
+
+    return coluna;
 }
