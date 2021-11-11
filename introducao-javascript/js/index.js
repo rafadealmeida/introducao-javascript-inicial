@@ -2,10 +2,10 @@ var titulo = document.querySelector(".titulo");
 
 titulo.textContent = "Nutrição Aparecida"
 
-var pacientes = document.querySelectorAll('.paciente');
+var pacientes = document.querySelectorAll(".paciente");
 
 for( i = 1; i <= pacientes.length; i++){
-
+   
     var paciente = pacientes[i];
     
     var pesoValido = true;
