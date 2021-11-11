@@ -8,17 +8,15 @@ for( i = 1; i <= pacientes.length; i++){
    
     var paciente = pacientes[i];
     
-    var pesoValido = true;
-    var alturaValida = true;
-    
-    
     var peso = paciente.querySelector(".info_peso").textContent;
     
     var altura = paciente.querySelector(".info_altura").textContent;
     
     var tdImc = calculaImc(peso, altura);
     
-
+    var pesoValido = true;
+    var alturaValida = true;
+    
     
     if(peso <= 0 || peso >= 1000){
         tdImc.textContent = "Peso inválido";
@@ -33,8 +31,8 @@ for( i = 1; i <= pacientes.length; i++){
     }
     
     if(pesoValido && alturaValida){
-        
-       var imc = calculaImc(peso, altura)
+       var imc = 0;
+       var imc = calculaImc(peso, altura);
         
         tdImc.textContent = imc;
     }
