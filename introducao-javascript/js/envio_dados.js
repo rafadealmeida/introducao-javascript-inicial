@@ -55,8 +55,7 @@ botao.addEventListener("click",function(evento){
     var erros = validaPaciente(paciente);
 
     if(erros.length > 0){
-        var mensagemErro =document.querySelector("#mensagem-erro");
-        mensagemErro.textContent = erros;
+        exibeMensagemDeErro(erros);
         return;
     }
 
@@ -67,6 +66,15 @@ botao.addEventListener("click",function(evento){
     formulario.reset();
     formulario.nome.focus();
 })
+
+function exibeMensagemDeErro(erros) {
+    var ul = document.querySelector("#mensagem-erro");
+    for (let i = 0; i < erros.length; i++) {
+        const erro = erros[i];
+        
+        
+    }
+}
 
 function validaPaciente(paciente) {
     erros = [];
