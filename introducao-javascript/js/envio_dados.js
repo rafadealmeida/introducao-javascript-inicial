@@ -52,8 +52,11 @@ botao.addEventListener("click",function(evento){
 
     var pacienteNovo = criarPacienteTabela(paciente);
 
-    if(!validaPaciente(paciente)){
-        console.log("Paciente Invalido");
+    var erros = validaPaciente(paciente);
+
+    if(erros.length > 0){
+        var mensagemErro =document.querySelector("#mensagem-erro");
+        mensagemErro.textContent = erros;
         return;
     }
 
@@ -66,9 +69,12 @@ botao.addEventListener("click",function(evento){
 })
 
 function validaPaciente(paciente) {
-    if(validaPeso(paciente.peso)){
-        return true;
-    } else {
-        return false;
+    erros = [];
+    
+    if(!validaPeso(paciente.peso)){
+        erros.push("Peso inválido");
+    } 
+    if (!validaAltura(paciente.altura)){
+        erros.push("Altura inválido");
     }
 }
