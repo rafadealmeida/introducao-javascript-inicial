@@ -65,10 +65,15 @@ botao.addEventListener("click",function(evento){
 
     formulario.reset();
     formulario.nome.focus();
+
+    mensagemDeErro = document.querySelector("#mensagem-erro");
+    mensagemDeErro.innerHTML = "";
 })
 
 function exibeMensagemDeErro(erros) {
     var ul = document.querySelector("#mensagem-erro");
+
+    ul.innerHTML = ""; 
     erros.forEach(function(erro){
         var li = document.createElement("li");
         li.textContent = erro;
@@ -85,10 +90,10 @@ function validaPaciente(paciente) {
     if(paciente.nome == 0){
         erros.push("Por favor preencha o nome do paciente")
     }
-    if(!validaPeso(paciente.peso)){
+    if(!validaPeso(paciente.peso) || (paciente.peso.length == 0)){
         erros.push("Peso inválido");
     } 
-    if (!validaAltura(paciente.altura)){
+    if (!validaAltura(paciente.altura) || (paciente.altura.length == 0)){
         erros.push("Altura inválido");
     }
 
