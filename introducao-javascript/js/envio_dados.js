@@ -69,12 +69,15 @@ botao.addEventListener("click",function(evento){
 
 function exibeMensagemDeErro(erros) {
     var ul = document.querySelector("#mensagem-erro");
-    for (let i = 0; i < erros.length; i++) {
-        const erro = erros[i];
-        
+    erros.forEach(function(erro){
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
+
         
     }
-}
+
 
 function validaPaciente(paciente) {
     erros = [];
@@ -85,4 +88,5 @@ function validaPaciente(paciente) {
     if (!validaAltura(paciente.altura)){
         erros.push("Altura inválido");
     }
+    return erros;
 }
