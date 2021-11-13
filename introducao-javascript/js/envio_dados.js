@@ -82,11 +82,18 @@ function exibeMensagemDeErro(erros) {
 function validaPaciente(paciente) {
     erros = [];
     
+    if(paciente.nome == 0){
+        erros.push("Por favor preencha o nome do paciente")
+    }
     if(!validaPeso(paciente.peso)){
         erros.push("Peso inválido");
     } 
     if (!validaAltura(paciente.altura)){
         erros.push("Altura inválido");
+    }
+
+    if (paciente.gordura == 0){
+        erros.push("A gordura não pode ficar em branco")
     }
     return erros;
 }
