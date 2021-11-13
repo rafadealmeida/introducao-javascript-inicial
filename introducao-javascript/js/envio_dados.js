@@ -52,6 +52,11 @@ botao.addEventListener("click",function(evento){
 
     var pacienteNovo = criarPacienteTabela(paciente);
 
+    if(!validaPaciente(paciente)){
+        console.log("Paciente Invalido");
+        return;
+    }
+
     var tabela = document.querySelector("#tabela-pacientes");
 
     tabela.appendChild(pacienteNovo);
@@ -59,3 +64,17 @@ botao.addEventListener("click",function(evento){
     formulario.reset();
     formulario.nome.focus();
 })
+
+function validaPaciente(paciente) {
+    if(validaPeso(paciente.peso)){
+        return true;
+    } else {
+        return false;
+    }
+        
+    if(validaAltura(paciente.altura)){
+        return true;
+    } else {
+        return false;
+        }
+}
