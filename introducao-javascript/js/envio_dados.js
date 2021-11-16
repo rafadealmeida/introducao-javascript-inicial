@@ -50,7 +50,7 @@ botao.addEventListener("click",function(evento){
 
     var paciente = captarDados(formulario);
 
-    var pacienteNovo = criarPacienteTabela(paciente);
+    
 
     var erros = validaPaciente(paciente);
 
@@ -59,9 +59,7 @@ botao.addEventListener("click",function(evento){
         return;
     }
 
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteNovo);
+   adicionarPacienteTabela(paciente);
 
     formulario.reset();
     formulario.nome.focus();
@@ -83,6 +81,12 @@ function exibeMensagemDeErro(erros) {
         
     }
 
+function adicionarPacienteTabela(paciente){
+    var pacienteNovo = criarPacienteTabela(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+
+    tabela.appendChild(pacienteNovo);
+}
 
 function validaPaciente(paciente) {
     erros = [];
