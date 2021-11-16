@@ -1,6 +1,6 @@
 var tabela = document.querySelector('#tabela-pacientes');
 
-tabela.addEventListener('dblclick',function(event) {
+/*tabela.addEventListener('dblclick',function(event) {
     var alvoDoEvento = event.target;//verificando aonde o double click foi, que pode ser em qualquer td da tabela.
     var paiDoAlvo = alvoDoEvento.parentNode; //com o '.parentNode' pego a partir do click o pai do alvo, que no caso seria a linha da tabela.
 
@@ -10,3 +10,9 @@ tabela.addEventListener('dblclick',function(event) {
          paiDoAlvo.remove();
      }
 })
+*/
+
+tabela.addEventListener("dblclick", function(evento){
+    evento.target.parentNode.remove();
+
+});
